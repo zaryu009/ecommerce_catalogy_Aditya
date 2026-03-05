@@ -12,6 +12,9 @@ app.use(express.json());
 connectDB();
 
 app.use("/api", productRoutes);
+app.get("/", (req, res) => {
+  res.send("API Running 🚀");
+});
 
 app.listen(5000, () => {
     console.log("Server running on port 5000");

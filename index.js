@@ -13,9 +13,14 @@ connectDB();
 
 app.use("/api", productRoutes);
 app.get("/", (req, res) => {
-  res.send("API Running 🚀");
-});
-
+  res.json({
+    message: "🚀 API Running Successfully",
+    project: "Bus Booking System",
+    developer: "Aditya",
+    status: "Online",
+    uptime: `${process.uptime().toFixed(2)} seconds`,
+    timestamp: new Date(),
+  });
 app.listen(5000, () => {
     console.log("Server running on port 5000");
 });
